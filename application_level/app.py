@@ -14,11 +14,14 @@ def start():
     con = None
     try:
         #init db connection
-        con = lite.connect('GSA.db')
+        con = lite.connect('../physical_level/GSA.db')
         cur = con.cursor()
 
         isEnded = "n"
         while isEnded != "y":
+            #clear terminal
+            system("clear");
+
             #get SQL comand from user input
             myStmt = input('Enter SQL command: ')
             cur.execute(myStmt)
