@@ -9,7 +9,7 @@ def read():
     print("reading data from csv file into db")
 
 
-#START SQL COMMANDS
+#READ SQL COMMANDS FROM USER INPUT
 def start():
     con = None
     try:
