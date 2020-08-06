@@ -1,1 +1,4 @@
-- make sure the foreign keys in the schema are dotted underlined
+#cmsc461_proj
+
+TO DO:
+- works on linux and mac, test on windows

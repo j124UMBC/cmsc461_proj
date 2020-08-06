@@ -1,8 +1,8 @@
 #!/usr/bin/python
 
 import sqlite3 as lite
-import sys
-from os import system, name
+from sys import platform
+from os import system
 
 #READ DATA FROM CSV FILE INTO DATABASE
 def read():
@@ -20,7 +20,10 @@ def start():
         isEnded = "n"
         while isEnded != "y":
             #clear terminal
-            system("clear");
+            if platform == "linux" or platform == "darwin":
+                system("clear");
+            elif platform == "win32":
+                system("cls");
 
             #get SQL comand from user input
             myStmt = input('Enter SQL command: ')
