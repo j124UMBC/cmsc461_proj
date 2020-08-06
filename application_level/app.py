@@ -35,15 +35,15 @@ def read():
             con.commit()
             non_records += 1
     print('\n{} Record Transferred to rental_agreement'. format(non_records))
-    # open custom_agency.csv file
-    # with open('../application_level/customer_agency.csv', 'r') as customer_agency:
-    #     non_records = 0
-    #     for row in customer_agency:
-    #         cur.execute("INSERT OR IGNORE INTO customer_agency values (?,?,?,?,?,?)", row.split(","))
-    #         con.commit()
-    #         non_records += 1
-    # print('\n{} Record Transferred to customer_agency'. format(non_records))
-    # con.close()
+    # open customer_agency.csv file
+    with open('../application_level/customer_agency.csv', 'r') as customer_agency:
+        non_records = 0
+        for row in customer_agency:
+            cur.execute("INSERT OR IGNORE INTO customer_agency values (?,?,?,?,?)", row.split(","))
+            con.commit()
+            non_records += 1
+    print('\n{} Record Transferred to customer_agency'. format(non_records))
+    con.close()
 #READ SQL COMMANDS FROM USER INPUT
 def start():
     con = None
