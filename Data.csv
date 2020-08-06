@@ -1,0 +1,39 @@
+OFFICE(office_name, office_city, square_footage)
+Pixoboo,Muarasiau,789
+Jaxspan,Succha,483
+Pixonyx,Santo Domingo,489
+Devpoint,Itapetinga,642
+Jaxnation,Mieścisko,164
+Realfire,Puji,131
+Oyope,Río Hondo,392
+Fanoodle,Nikolayevka,540
+Eabox,Ancona,568
+Browsebug,Velké Hoštice,664
+Oozz,Yushu,791
+Yakitri,El Cuy,405
+Oyoloo,Coronel Belisle,272
+Realfire,Hamar,608
+Bubblemix,Mulhouse,227
+
+RENTAL_AGREEMENT(agreement_id, rent_amount, end_date, office_name)
+1,921.81,6/28/2020,Oyope
+2,1045.05,7/11/2020,Fanoodle
+3,1693.08,12/8/2019,Bubblemix
+4,1055.95,3/13/2020,Yakitri
+
+PARTIES(agency_id, agreement_id) TABLE
+1,2
+3,4
+
+CUSTOMER_AGENCY(agency_id, agency_name, address, agency_city, phone_no)
+1,"Bednar, Kutch and Fay",88 Di Loreto Drive,Kriel,653-998-0301
+2,Baumbach LLC,03 Lotheville Center,Villarrica,989-272-0021
+3,"Hodkiewicz, McClure and Murazik",753 Nevada Plaza,Heredia,311-920-4757
+4,Jerde-Howell,09 Corry Alley,Manhiça,697-939-4982
+5,Howell Inc,0030 Tony Point,Huwan,154-567-0215
+6,Kuphal-Stehr,443 Derek Trail,Síkinos,458-923-4675
+7,Kulas and Sons,01171 Canary Place,Nazran’,132-860-5136
+8,Jacobson LLC,40 Duke Park,Stockholm,458-561-0922
+9,Buckridge LLC,773 Eastwood Junction,Isla,772-774-1310
+10,Mann-Ortiz,53 Mcguire Way,Sloboda,240-542-9186
+11,"Ortiz, Klein and Hilll",0642 6th Junction,Maloma,302-755-5823

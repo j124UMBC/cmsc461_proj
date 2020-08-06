@@ -1,0 +1,1 @@
+- make sure the foreign keys in the schema are dotted underlined
