@@ -2,11 +2,12 @@
 
 import sqlite3 as lite
 import os
+import sys
 from sys import platform
 from os import system, path
 
 #READ DATA FROM CSV FILE INTO DATABASE
-
+###
 #insert contents of csv file into the office table
 def read_office(con, cur, file_name):
     with open(file_name, 'r') as office:
@@ -113,8 +114,8 @@ def main():
 
 
             except lite.Error as e:
-                print("Error %s:" % e.args[0])
-                sys.exit(1)
+                print("Error %s:\n" % e.args[0])
+                #sys.exit(1)
 
         if(loop_control == '2'):
             #init db connection
