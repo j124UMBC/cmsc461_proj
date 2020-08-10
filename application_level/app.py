@@ -93,16 +93,18 @@ def run(con, cur):
     loop_control = "y"
     while loop_control != "n":
         #clear terminal
-        if platform == "linux" or platform == "darwin":
-            system("clear");
-        elif platform == "win32":
-            system("cls");
-
-        #get SQL comand from user input
-        myStmt = input('Enter SQL command: ')
-        cur.execute(myStmt)
-        con.commit()
-
+        try:
+            if platform == "linux" or platform == "darwin":
+                system("clear");
+            elif platform == "win32":
+                system("cls");
+    
+            #get SQL comand from user input
+            myStmt = input('Enter SQL command: ')
+            cur.execute(myStmt)
+            con.commit()
+        except lite.Error as e:
+            print("Error %s:" % e.args[0])
         #display results
         data = cur.fetchall()
         print("The results are: ")
