@@ -20,6 +20,7 @@ CREATE TABLE parties (
     agreement_id INTEGER,
     FOREIGN KEY(agency_id) REFERENCES customer_agency(agency_id),
     FOREIGN KEY(agreement_id) REFERENCES rental_agreement(agreement_id)
+	PRIMARY KEY(agency_id, agreement_id)
 );
 
 --CREATE CUSTOMER AGENCY TABLE
