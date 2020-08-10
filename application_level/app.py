@@ -128,7 +128,7 @@ def load(con, cur):
     while(table_choice != '1' and table_choice != '2' and table_choice != '3' and table_choice != '4'):
         table_choice = input('Try again: ')
 
-    file_name = input('Please enter the file path to the csv file you would like to use (i.e. ./<file>.csv): ')
+    file_name = input('Please enter the file path to the csv file you would like to use (i.e. <file>.csv): ')
     while(os.path.exists(file_name) == False):
         file_name = input('Try again: ')
 
