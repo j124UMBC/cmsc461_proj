@@ -10,7 +10,7 @@ CREATE TABLE rental_agreement (
     agreement_id INTEGER PRIMARY KEY,
     rent_amount REAL NOT NULL,
     end_date TEXT,
-    office_name INTEGER, 
+    office_name TEXT NOT NULL, 
     FOREIGN KEY (office_name) REFERENCES office(office_name)
 );
 
