@@ -78,14 +78,17 @@ def main():
             loop_control = input('Try again: ')
 
         if(loop_control == '1'):
+            #init db connection
             try:
-                #init db connection
                 con = lite.connect('../physical_level/GSA.db')
                 cur = con.cursor()
-
-                loop_control = "y"
-                while loop_control != "n":
-                    #clear terminal
+            except lite.Error as e:
+                    print("Error %s:" % e.args[0])
+            
+            loop_control = "y"
+            while loop_control != "n":
+                #clear terminal
+                try:
                     if platform == "linux" or platform == "darwin":
                         system("clear");
                     elif platform == "win32":
@@ -102,20 +105,18 @@ def main():
                         print(record)
                     loop_control = input('Enter another command? (y/n): ')
 
-                #commit transaction and close the db connection
-                con.commit()
-                con.close()
 
-                #clear terminal
-                if platform == "linux" or platform == "darwin":
-                    system("clear");
-                elif platform == "win32":
-                    system("cls");
+                except lite.Error as e:
+                    print("Error %s:" % e.args[0])
+            #commit transaction and close the db connection
+            con.commit()
+            con.close()
 
-
-            except lite.Error as e:
-                print("Error %s:\n" % e.args[0])
-                #sys.exit(1)
+            #clear terminal
+            if platform == "linux" or platform == "darwin":
+                system("clear");
+            elif platform == "win32":
+                system("cls");
 
         if(loop_control == '2'):
             #init db connection
