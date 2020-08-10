@@ -11,7 +11,7 @@ def read_office(con, cur, file_name):
     with open(file_name, 'r') as office:
         non_records = 0
         for row in office:
-            cur.execute("INSERT OR IGNORE INTO office values (?,?,?)", row.split(","))
+            cur.execute("INSERT OR IGNORE INTO office values (?,?,?)", row.strip('\n').split(","))
             con.commit()
             non_records += 1
     print('*** {} Records transferred to office! ***'.format(non_records))
@@ -21,7 +21,7 @@ def read_parties(con, cur, file_name):
     with open(file_name, 'r') as parties:
         non_records = 0
         for row in parties:
-            cur.execute("INSERT OR IGNORE INTO parties values (?,?)", row.split(","))
+            cur.execute("INSERT OR IGNORE INTO parties values (?,?)", row.strip('\n').split(","))
             con.commit()
             non_records += 1
     print('*** {} Records transferred to parties! ***'.format(non_records))
@@ -31,7 +31,7 @@ def read_rental_agreement(con, cur, file_name):
     with open(file_name, 'r') as rental_agreement:
         non_records = 0
         for row in rental_agreement:
-            cur.execute("INSERT OR IGNORE INTO rental_agreement values (?,?,?,?)", row.split(","))
+            cur.execute("INSERT OR IGNORE INTO rental_agreement values (?,?,?,?)", row.strip('\n').split(","))
             con.commit()
             non_records += 1
     print('*** {} Records transferred to rental_agreement! ***'.format(non_records))
@@ -41,7 +41,7 @@ def read_customer_agency(con, cur, file_name):
     with open(file_name, 'r') as customer_agency:
         non_records = 0
         for row in customer_agency:
-            cur.execute("INSERT OR IGNORE INTO customer_agency values (?,?,?,?,?)", row.split(","))
+            cur.execute("INSERT OR IGNORE INTO customer_agency values (?,?,?,?,?)", row.strip('\n').split(","))
             con.commit()
             non_records += 1
     print('*** {} Records transferred to customer_agency! ***'.format(non_records))
